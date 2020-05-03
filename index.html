@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JavaScript Security</title>
+	</head>
+	<body>
+		<h1>JavaScript Security</h1>
+		<p>
+			In JavaScript our code can become compromised on either the client side or
+			server side if we do not take the right security measures. There are some
+			common attacks that can happen on client and server side. Because frontend
+			JavaScirpt code is viewable by all users on a browser code can become
+			vulnerable to scripting and forgery attacks if we leave our code
+			vulnerable to such attacks. One general rule of thumb is to not store any
+			confidential user information or backend data e.g. customer payment info,
+			database crednetials. as users can read the source JavaScript code on the
+			browser and therfore see this information.
+		</p>
+		<h3>Cross-Site Scripting Attacks (XSS)</h3>
+		<p>
+			Cross-Site Scripting Attacks (XSS) is an attack pattern of injecting and
+			executing malicious JavaScript code on your app. This is a very dangerous
+			attack as the attacker can inject any JavaScript code such as reading from
+			a users browser storage, sending them to a different url, sending a
+			network reqeust that isnt part of the original app or sending malicious
+			code to be stored on the backend/database that could be executed later. A
+			common example of injecting JavaScript is by executing a script or piece
+			of JavaScirpt code in a place where innerHTML is going to be rendered. For
+			example a form may take in information from an input and render it using
+			innerHTML but an attacker could use that form to send a script to execute
+			as that script would then be added as legitimate HTML and execute. A way
+			to fix this and prevent such JavaScript injection is to remove any uses of
+			innerHTML and replace them with textContent that way anything entered is
+			rendered as a string and cant be added as HTML such as a script to be
+			executed. Another common fix approach is to sanitize all innerHTML before
+			it is added, there are libraries that will do this for you and go through
+			your innerHTML and sanitize it removing any JavaScript code so it cant be
+			injected and executed.
+		</p>
+		<input type="text" id="xss-input" />
+		<button id="xss-button">Attack</button>
+		<div id="xss-wrapper"></div>
+	</body>
+</html>
