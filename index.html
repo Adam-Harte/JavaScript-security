@@ -42,5 +42,24 @@
 		<input type="text" id="xss-input" />
 		<button id="xss-button">Attack</button>
 		<div id="xss-wrapper"></div>
+		<h3>Cross Site Request Forgery Attacks (CSRF)</h3>
+		<p>
+			Cross site request forgery attacks is another attack pattern dependant on
+			injecting content. It links you to a pre prepared page which will look and
+			behave like the site you wanted to visit but will make some
+			different/additional reuests reading from your browser storage data e.g.
+			making an online banking request to send money. So for example the
+			injected content could be a XSS attack linking you to another page where
+			they take your browser storage data such as cookie data and use it to make
+			malicious network requests. This attack is more of a server side security
+			issue and is typically handled/defended against on the backend side using
+			CSRF tokens. What happens is you may be sent to a fake site via a mail
+			link or XSS attack etc. that looks and behaves like the real site however
+			instead of it making the request you want it will take your auth data you
+			need to make the request and talk to the correct backend but instead make
+			a different request e.g. instead of sending money from A to b send from A
+			to C. These attacks need to be protected against and prevented on the
+			backend side by providing additonal security measures such as CSRF tokens.
+		</p>
 	</body>
 </html>
