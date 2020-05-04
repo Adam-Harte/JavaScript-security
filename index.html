@@ -61,5 +61,15 @@
 			to C. These attacks need to be protected against and prevented on the
 			backend side by providing additonal security measures such as CSRF tokens.
 		</p>
+		<h3>Cross Origin Resource Sharing (CORS)</h3>
+		<p>
+			Cross origin resource sharing (CORS) is not an attack pattern but more of
+			a security concept. The concept is that requests made on the browser are
+			only accepted if they are made to the backend on the same server.
+			Therefore only front end pages served on the same server as the backend
+			would be able to successfully make network requests. You control COSR on
+			the server side via resonse headers where you can determine if an incoming
+			request is allowed and what response they will get.
+		</p>
 	</body>
 </html>
